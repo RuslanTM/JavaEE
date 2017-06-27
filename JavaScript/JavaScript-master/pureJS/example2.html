@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>JS example</title>
+	
+		<script type="text/javascript">
+			
+				
+				function sum(){
+					var val1 = document.getElementById('val1').value;
+					var val2 = document.getElementById('val2').value;
+					var sum = parseInt(val1, 10) + parseInt(val2, 10);
+					document.getElementById('result').value = sum;
+				}
+				
+				function showValue(input){
+					alert(input.value);
+				}
+				
+				
+				function rightClick(){
+					
+					if(window.event.which==3){
+						
+						alert('right click');
+						event.preventDefault();
+					}
+				}
+				
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<input type="text" id="val1"  onclick="showValue(this)"/> + 
+		<input type="text" id="val2" onmouseup="rightClick()"/> 
+		<input type="button" value="=" onclick="sum()"/><br/>
+		
+		Result = <input type=text id="result"/>
+		
+	
+	</body>
+
+</html>

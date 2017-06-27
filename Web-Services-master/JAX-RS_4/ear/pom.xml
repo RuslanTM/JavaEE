@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jax-rs</artifactId>
+        <groupId>ru.javacourse</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jax-rs-ear</artifactId>
+
+    <packaging>ear</packaging>
+
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>ru.javacourse</groupId>
+            <artifactId>jax-rs-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.javacourse</groupId>
+            <artifactId>jax-rs-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>jax-rs-ear</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <version>5</version>
+                    <finalName>jax-rs-ear</finalName>
+                    <displayName>jax-rs-ear</displayName>
+                    <modules>
+                        <ejbModule>
+                            <groupId>ru.javacourse</groupId>
+                            <artifactId>jax-rs-ejb</artifactId>
+                            <bundleFileName>jax-rs-ejb.jar</bundleFileName>
+                        </ejbModule>
+                        <webModule>
+                            <groupId>ru.javacourse</groupId>
+                            <artifactId>jax-rs-service</artifactId>
+                            <bundleFileName>jax-rs-service.war</bundleFileName>
+                            <contextRoot>/rest</contextRoot>
+                        </webModule>
+                    </modules>
+                    <generateApplicationXml>true</generateApplicationXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+
+</project>

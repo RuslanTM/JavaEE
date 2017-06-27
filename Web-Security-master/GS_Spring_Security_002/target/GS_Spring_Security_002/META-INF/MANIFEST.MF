@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: Aser
+Class-Path: lib/spring-core-3.0.5.RELEASE.jar lib/spring-asm-3.0.5.REL
+ EASE.jar lib/commons-logging-1.1.1.jar lib/spring-web-3.0.5.RELEASE.j
+ ar lib/aopalliance-1.0.jar lib/spring-beans-3.0.5.RELEASE.jar lib/spr
+ ing-context-3.0.5.RELEASE.jar lib/spring-webmvc-3.0.5.RELEASE.jar lib
+ /spring-context-support-3.0.5.RELEASE.jar lib/spring-expression-3.0.5
+ .RELEASE.jar lib/spring-security-core-3.0.5.RELEASE.jar lib/spring-tx
+ -3.0.3.RELEASE.jar lib/spring-aop-3.0.3.RELEASE.jar lib/aspectjrt-1.6
+ .8.jar lib/aspectjweaver-1.6.8.jar lib/spring-security-web-3.0.5.RELE
+ ASE.jar lib/spring-security-config-3.0.5.RELEASE.jar lib/jstl-1.2.jar
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_20
+

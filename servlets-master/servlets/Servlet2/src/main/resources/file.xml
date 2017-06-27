@@ -1,0 +1,18 @@
+<person>
+<address>
+<city>SPb</city>
+<street>Nevsky 10</street>
+<zip>123456</zip>
+</address>
+<age>20</age>
+<firstName>Vova</firstName>
+<lastName>Ivanov</lastName>
+<numbers>
+<number>23413452345</number>
+<type>cell</type>
+</numbers>
+<numbers>
+<number>1111111111</number>
+<type>work</type>
+</numbers>
+</person>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <!-- LDAP Source REALM -->
+
+
+    <Realm className="org.apache.catalina.realm.JNDIRealm"
+             connectionURL="ldap://localhost:10389"
+             userPattern="cn={0},ou=users,dc=example,dc=com"
+             roleBase="ou=groups,dc=example,dc=com"
+             roleName="cn"
+             roleSearch="(uniqueMember={0})"
+            />
+
+</Context>

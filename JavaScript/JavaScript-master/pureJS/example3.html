@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>JS example</title>
+	
+		<script type="text/javascript">
+			
+				function showlocation(){
+					alert(window.location);
+				}
+				
+				function showpathname(){
+					alert(window.location.pathname);
+				}
+				
+				function showprotocol(){
+					alert(window.location.protocol);
+				}
+				
+				function copytext(){
+					var text = document.getElementById('sourceText').value;
+					//document.write(text);
+					document.getElementById('newText').value = text;
+				}
+				
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<input type="button" value="window.location" onclick="showlocation()"/>
+		
+		<input type="button" value="window.location.path" onclick="showpathname()"/>
+		
+		<input type="button" value="window.location.protocol" onclick="showprotocol()"/>
+		
+		<br/>
+		
+		Write text: <input type="text" id="sourceText"/> 
+					<input type="text" id="newText"/>
+		<input type="button" value="copy" onclick="copytext()"/>
+		
+		
+		
+	
+	</body>
+
+</html>

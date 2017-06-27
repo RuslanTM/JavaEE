@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="jax-rs-ear:ear">
+    <output-path>$PROJECT_DIR$/ear/target</output-path>
+    <root id="archive" name="jax-rs-ear.ear">
+      <element id="artifact" artifact-name="jax-rs-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

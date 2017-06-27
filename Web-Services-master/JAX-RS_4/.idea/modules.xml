@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jax-rs.iml" filepath="$PROJECT_DIR$/jax-rs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ear/jax-rs-ear.iml" filepath="$PROJECT_DIR$/ear/jax-rs-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejb/jax-rs-ejb.iml" filepath="$PROJECT_DIR$/ejb/jax-rs-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/jax-rs-service.iml" filepath="$PROJECT_DIR$/service/jax-rs-service.iml" />
+    </modules>
+  </component>
+</project>

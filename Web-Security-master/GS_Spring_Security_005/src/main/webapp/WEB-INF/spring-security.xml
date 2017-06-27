@@ -1,0 +1,35 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+
+    <http auto-config="true">
+        <intercept-url pattern="/welcome*" access="ROLE_USER"/>
+        <intercept-url pattern="/admin*" access="ROLE_ADMINISTRATOR"/>
+        <intercept-url pattern="/contacts/**" access="ROLE_ADMINISTRATOR,ROLE_USER"/>
+
+        <form-login login-page="/login"
+                    default-target-url="/welcome"
+                    authentication-failure-url="/loginfailed"/>
+        <logout logout-success-url="/logout"/>
+    </http>
+
+    <ldap-server id="ldapServer" url="ldap://localhost:10389/dc=example,dc=com" manager-dn="uid=admin,ou=system" manager-password="secret" />
+
+    <authentication-manager>
+        <ldap-authentication-provider server-ref="ldapServer"
+                                      role-prefix="ROLE_"
+                                      group-role-attribute="cn"
+                                      group-search-filter="(uniqueMember={0})"
+                                      group-search-base="ou=groups"
+                                      user-search-base="ou=users"
+                                      user-search-filter="(cn={0})"/>
+
+    </authentication-manager>
+
+
+
+</beans:beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person>
+        <firstName>Vova</firstName>
+        <lastName>Ivanov</lastName>
+        <age>20</age>
+        <address>
+            <city>SPb</city>
+            <street>Nevsky 10</street>
+            <zip>123456</zip>
+        </address>
+        <numbers>
+            <number>23413452345</number>
+            <type>cell</type>
+        </numbers>
+        <numbers>
+            <number>1111111111</number>
+            <type>work</type>
+        </numbers>
+    </person>
+    <person>
+        <firstName>Igor</firstName>
+        <lastName>Petrov</lastName>
+        <age>27</age>
+        <address>
+            <city>Moscow</city>
+            <street>Lenina 20</street>
+            <zip>23423412</zip>
+        </address>
+        <numbers>
+            <number>234234123</number>
+            <type>cell</type>
+        </numbers>
+        <numbers>
+            <number>11333331</number>
+            <type>work</type>
+        </numbers>
+    </person>
+</persons>

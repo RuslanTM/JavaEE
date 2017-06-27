@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>JS example</title>
+	
+		<style>
+			
+			.red{
+				color:red;
+			}
+			
+			.white{
+				color:white;
+				background:red;
+			}
+		
+		</style>
+	
+		<script type="text/javascript">
+			
+				function makeWhite(){
+					document.getElementsByClassName('red')[0].setAttribute("class", "white");
+				}
+				
+				function returnRed(){
+					var s = document.getElementById('s1');
+					s.setAttribute("class", "red");
+			/*		s.style.color = 'red';
+					s.style.background = 'white';
+					*/
+				}
+				
+			
+				
+		</script>
+		
+	</head>
+	
+	<body>
+			
+			
+		
+			
+			<span id="s1" class="red">This is red text</span>
+			
+			<input type="button" value="Make text white" onclick="makeWhite()"/>
+			<input type="button" value="Return" onclick="returnRed()"/>
+			
+			
+	
+	</body>
+
+</html>

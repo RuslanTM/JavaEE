@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>JS example</title>
+	
+		<script type="text/javascript">
+			
+				function submitForm(){
+					document.forms['form1'].submit();	
+				}
+				
+				
+				function submitForm2(){
+					alert('Submit form2... set second value to 5');	
+					document.form2.val2.value = '5';	
+					
+				}
+				
+		</script>
+		
+	</head>
+	
+	<body>
+			
+			
+		<form name="form1" action="myServlet"> 	
+			
+			Num 1 :<input name="val1" type="text" id="val1"/> + Num 2 :<input type="text" name="val2" id="val2"/> 
+			<input type="button" value="=" onclick="submitForm()"/><br/>
+			
+		</form>
+		
+		<form name="form2" action="myServlet" onsubmit="submitForm2()"> 	
+			
+			Num 1 :<input name="val1" type="text"/> + Num 2 :<input type="text" name="val2" /> 
+			<input type="submit" value="="><br/>
+			
+		</form>
+	
+	</body>
+
+</html>

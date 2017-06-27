@@ -1,0 +1,104 @@
+﻿<html>
+	<head>
+		<title>JS example</title>
+		
+		
+		<style> 
+			.highlight { background: #FA6; } 
+		</style>
+		
+		
+		<script type="text/javascript">
+			    
+				
+				function init(){
+					
+					document.getElementById('button').onclick = function() {
+						alert('Клик');
+					};
+										
+				}
+
+				function makeIteration(a){
+					for (var i=0; i < a.length; i++){
+						alert(a[i]);
+					}							
+				}
+				
+				function iterateArray1(a){
+					var a = new Array('test1', 'test2', 4, 6);
+					makeIteration(a);			
+				}
+				
+				function iterateArray2(a){
+					var a = [ 1, 2, 'string'];
+					makeIteration(a);			
+				}
+				
+				
+				
+				function testCondition1(){
+					var a = document.getElementById('n1').value;
+					var b = document.getElementById('n2').value;
+					
+					if (a > b){
+						alert('a greater than b');
+					}else{
+						alert('a less than b');
+					}
+				}
+				
+				function breakLoop(){
+					for(i=0; i<10; i++) {
+					  
+					  if (i < 5) continue;
+					  
+					  if (i > 7) break;
+					  
+					  alert(i); 
+					  
+					}				
+				}
+				
+				function selectValue(select){
+					val = select.options[select.selectedIndex].value;
+					document.getElementById('selected').innerHTML = '<i>' + val + '</i>';
+				}
+				
+				
+				
+				
+		</script>
+		
+	</head>
+	
+	<body onload="init()">
+		
+		<input type="button" value="iterate array 1" onclick="iterateArray1()"/> &nbsp;
+		<input type="button" value="iterate array 2" onclick="iterateArray2()"/> <br/>
+		
+		number A <input id="n1" class="" type="text"/> <br/>
+		number B <input id="n2" type="text"/> <a href="" onclick="testCondition1()">A greater than B?</a><br/>
+		
+		
+		<span onclick="breakLoop();" style="font-size:24px; color:red;">Run break loop</span><br/>
+		
+		<button id="button" value="">initialized button</button><br/>
+		
+		<select  onchange="selectValue(this)">
+			<option value="1">value 1</option>
+			<option value="2">value 2</option>
+			<option value="3">value 3</option>
+		</select>
+		
+		you selected <span id="selected"></span>
+		
+		<br/>
+		
+		Search <input  class="" type="text" onfocus="this.value = ''" value="Input text" onblur="this.value='Input text'"/>
+		
+		
+		
+	</body>
+
+</html>

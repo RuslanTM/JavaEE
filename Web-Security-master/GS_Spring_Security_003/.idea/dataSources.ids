@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - blog@localhost" uuid="11154eb0-08dc-4350-aecb-41b871eda7ab">
+    <database-info product="MySQL" version="5.7.17-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="blog"/>
+    <table name="categories" schema="" catalog="blog" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="CONSTR_POST_CATEGORY" table="posts" schema="" catalog="blog" columns="categoryId"/>
+    </table>
+    <table name="comments" schema="" catalog="blog" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="comment" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="author" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="postId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_POST_COMMENTS" columns="postId" ref-table="posts" ref-schema="" ref-catalog="blog" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_POST_COMMENTS" unique="false" columns="postId"/>
+    </table>
+    <table name="posts" schema="" catalog="blog" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="summary" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="body" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="categoryId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="CONSTR_POST_CATEGORY" columns="categoryId" ref-table="categories" ref-schema="" ref-catalog="blog" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_POST_COMMENTS" table="comments" schema="" catalog="blog" columns="postId"/>
+      <index name="CONSTR_POST_CATEGORY" unique="false" columns="categoryId"/>
+    </table>
+    <table name="user_roles" schema="" catalog="blog" type="TABLE">
+      <column name="USER_ROLE_ID" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="USER_ID" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="AUTHORITY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ROLE_ID"/>
+      <foreign-key name="FK_user_roles" columns="USER_ID" ref-table="users" ref-schema="" ref-catalog="blog" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_user_roles" unique="false" columns="USER_ID"/>
+    </table>
+    <table name="users" schema="" catalog="blog" type="TABLE">
+      <column name="USER_ID" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ENABLED" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+      <exported-key name="FK_user_roles" table="user_roles" schema="" catalog="blog" columns="USER_ID"/>
+    </table>
+  </data-source>
+</component>

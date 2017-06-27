@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jax-rs-service:war">
+    <output-path>$PROJECT_DIR$/service/target</output-path>
+    <root id="archive" name="jax-rs-service-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="jax-rs-service:war exploded" />
+    </root>
+  </artifact>
+</component>

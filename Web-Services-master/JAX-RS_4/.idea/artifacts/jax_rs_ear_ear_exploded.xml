@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="jax-rs-ear:ear exploded">
+    <output-path>$PROJECT_DIR$/ear/target/jax-rs-ear</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="jax-rs-ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/ear/target/jax-rs-ear/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="archive" name="jax-rs-ejb.jar">
+        <element id="artifact" artifact-name="jax-rs-ejb:ejb exploded" />
+      </element>
+      <element id="archive" name="jax-rs-service.war">
+        <element id="artifact" artifact-name="jax-rs-service:war exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>
